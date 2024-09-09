@@ -1,0 +1,21 @@
+class Solution {
+public:
+    void sortnumbers(vector<int>&arr) {
+        int i=0, j=0, k=arr.size()-1;
+        while(j<=k){
+            if(!arr[j]){
+                swap(arr[i++],arr[j++]);
+            }
+            else if(arr[j]==1){
+                j++;
+            }
+            else{
+                swap(arr[j],arr[k--]);
+            }
+        }
+        
+    }
+};
+
+Example: arr=[0,1,2,1,0,2,1,0]
+Output received: [0,0,0,1,1,1,2,2]
