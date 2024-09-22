@@ -1,0 +1,17 @@
+def kdistinct(s, k):
+    if k > len(set(s)):
+        return 0
+    res = 0
+    
+    for i in range(len(s)):
+        dist = set()
+        for j in range(i, len(s)):
+            if s[j] not in dist:
+                dist.add(s[j])
+            
+            if len(dist) == k:
+                res += 1
+            elif len(dist) > k: 
+                break
+                
+    return res
