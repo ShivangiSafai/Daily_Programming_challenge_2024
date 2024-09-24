@@ -1,0 +1,13 @@
+int lcm(int a, int b) {
+    int maxVal = (a > b) ? a : b; 
+
+    while (true) {
+        if (maxVal % a == 0 && maxVal % b == 0) {
+            return maxVal; 
+        }
+        ++maxVal; 
+    }
+}
+
+
+Here is the simple logic provided here.
