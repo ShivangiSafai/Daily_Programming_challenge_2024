@@ -1,0 +1,21 @@
+def insert_sorted(st, e):
+   
+    if len(st) == 0 or st[-1] <= e:
+        st.append(e)
+    else:
+                temp = st.pop()
+        insert_sorted(st, e)
+               st.append(temp)
+
+
+def sort_stack(st):
+        if len(st) > 0:
+       
+        temp = st.pop()
+               sort_stack(st)
+       
+        insert_sorted(st, temp)
+
+
+
+//Then.simply we call the function 
