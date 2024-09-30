@@ -1,0 +1,14 @@
+class findfirstrepeatedele {
+public:
+        int firstElementToRepeatKTimes(vector<int>& nums, int k) {
+       unordered_map<int, int> freqMap;  
+
+            for (int num : nums) {
+            freqMap[num]++;
+            if (freqMap[num] == k) {
+                return num;  //             }
+        }
+        
+        return -1;  
+    }
+};
