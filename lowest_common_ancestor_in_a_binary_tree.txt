@@ -1,0 +1,16 @@
+class Solution {
+public:
+    TreeNode* lca(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if(root==nullptr) return root;
+
+        TreeNode*leftside=lca(root->left,p,q);
+        TreeNode*rightside=lca(root->right,p,q);
+
+        if((leftside && rightside)|| (root==p || root==q))
+        return root;
+        return(leftside==nullptr)? rightside:leftside;
+    }
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        return lca(root,p,q);
+    }
+};
