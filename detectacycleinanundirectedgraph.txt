@@ -1,0 +1,22 @@
+def is_cyclic_dfs(V, edges):
+    from collections import defaultdict
+
+    def dfs(v, visited, parent):
+        visited.add(v)
+        for neighbor in adj[v]:
+            if neighbor not in visited:
+                if dfs(neighbor, visited, v):
+                    return True
+            elif neighbor != parent:
+                return True
+        return False
+    adj = defaultdict(list)
+    for u, v in edges:
+        adj[u].append(v)
+        adj[v].append(u)
+
+    visited = set()
+    for i in range(V):
+        if i not in visited and dfs(i, visited, -1):
+            return True
+    return False
